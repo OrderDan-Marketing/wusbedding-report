@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="googlebot" content="noindex,nofollow">
+<title>我們是幸福床店｜廣告數據現況與待解決問題</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF6F1;--bg2:#F3ECE4;--panel:#FFFDFB;--line:#E6DAD2;--deep:#2A1B1D;--ink:#2A1B1D;--sub:#5E4F50;--red:#B5262D;--redon:#E8575E;--pink:#F5C6C9;--mute:#A8968F;--cream:#FAF6F1;--hf:"Chiron Sung HK","Noto Sans TC",sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC",sans-serif;font-size:20px;line-height:1.6;font-weight:400}
+h1,h2,h3{font-family:var(--hf);font-weight:700;margin:0}
+h1{font-size:clamp(44px,7vw,104px);line-height:1.15}
+h2{font-size:clamp(30px,3.6vw,52px);line-height:1.25}
+h3{font-size:26px;line-height:1.3}
+p{margin:0}
+dl,dd,ol,ul{margin:0}
+.slide{position:relative;scroll-snap-align:start;background:var(--bg);color:var(--ink)}
+.slide.alt{background:var(--bg2)}
+.slide.dark{background:var(--deep);color:var(--cream)}
+.slide.hot{background:#2A1B1D;color:#FAF6F1}
+.slide.t1{background:#FBF8F4}
+.slide.t2{background:#F1E6D8}
+.slide.t0{background:#E8D5C4}
+.in{position:relative;width:100%;max-width:1400px;min-height:100vh;margin:0 auto;padding:64px 48px 96px;display:flex;flex-direction:column;justify-content:center;gap:32px}
+.in.sb{justify-content:space-between}
+.hd{display:flex;flex-direction:column;gap:10px}
+.eyebrow{font-size:18px;font-weight:700;letter-spacing:.18em;color:var(--red)}
+.dark .eyebrow{color:var(--redon)}
+.hot .eyebrow{color:var(--redon)}
+.dark h1,.dark h2,.hot h2{color:#FAF6F1}
+.ft{position:absolute;left:48px;right:48px;bottom:28px;display:flex;justify-content:space-between;gap:24px;font-size:16px;color:var(--mute)}
+.hot .ft{color:var(--mute)}
+.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;min-width:0}
+.cards{display:grid;gap:24px}
+.cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cards.rows{grid-template-columns:minmax(0,1fr);gap:16px}
+.card dt{font-size:18px;font-weight:700;letter-spacing:.12em;color:var(--red);margin-bottom:10px}
+.card dd{display:flex;flex-direction:column;gap:12px}
+.card dd p{color:var(--sub)}
+.card.num dt{font-size:40px;line-height:1;letter-spacing:0;font-family:var(--hf)}
+.card.row{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;padding:22px 28px}
+.card.row dt{font-size:40px;line-height:1;letter-spacing:0;white-space:nowrap;margin:0;font-family:var(--hf)}
+.card.row dd{flex:1 1 180px;display:block;color:var(--sub)}
+.panel{display:flex;flex-direction:column;gap:14px}
+.panel ul,.panel ol{padding-left:1.4em;display:flex;flex-direction:column;gap:6px}
+.panel p{color:var(--sub)}
+.panel li{color:var(--ink)}
+.band{background:var(--bg2);color:var(--ink);border-radius:16px;padding:24px 32px}
+.alt .band{background:var(--panel);border:1px solid var(--line)}
+.band p{color:var(--ink)}
+.note{background:var(--bg2);border-radius:16px;padding:24px 32px}
+.alt .note{background:var(--bg)}
+.sub{color:var(--sub)}
+/* tabs */
+.tabs{position:sticky;top:0;z-index:50;display:flex;gap:8px;padding:10px 16px;background:rgba(255,253,251,.96);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.2) blur(6px)}
+.tabs .tab{appearance:none;border:0;background:none;font:inherit;font-size:18px;font-weight:700;color:var(--sub);padding:12px 18px;min-height:48px;border-radius:12px;cursor:pointer;letter-spacing:.04em;white-space:nowrap}
+.tabs .tab.on{color:var(--red);background:var(--bg2);box-shadow:inset 0 -3px 0 var(--red)}
+.tabs .tab:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+main[hidden]{display:none}
+html{scroll-padding-top:80px}
+body{overflow-anchor:none}
+/* Google 分頁專用 */
+#tab-google h1{font-size:clamp(34px,4.4vw,60px);line-height:1.2}
+#tab-google h2{font-size:clamp(26px,2.5vw,36px);line-height:1.3}
+#tab-google .cvsub{font-size:clamp(20px,1.8vw,26px);line-height:1.5}
+.stats.s3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.note a,.panel a,.band a{color:var(--red)}
+.panel h3.tt{font-size:22px}
+.note a:hover,.panel a:hover{color:#9E1F25}
+@media (max-width:767px){.tabs{padding:8px 12px;gap:4px}.tabs .tab{font-size:16px;padding:10px 12px}#tab-google h2{font-size:26px}.stats.s3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.stats.s3{grid-template-columns:minmax(0,1fr)}}
+.xlink a{display:inline-block;background:var(--red);color:#FFFDFB;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 24px}.xlink a:hover{background:#9E1F25}
+/* diagnosis */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;min-width:0}
+.stat dt{font-family:var(--hf);font-size:clamp(44px,5vw,80px);font-weight:700;line-height:1;overflow-wrap:anywhere;color:var(--red)}
+.stat dd{margin-top:12px;color:var(--sub);font-size:20px;line-height:1.4}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;font-size:22px}
+/* status */
+.split{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:48px;align-items:start}
+.facts{list-style:none;padding:0;display:flex;flex-direction:column;gap:18px}
+.facts li{display:flex;gap:14px;align-items:flex-start}
+.facts b{color:var(--red);font-weight:700;font-family:var(--hf);font-size:22px;white-space:nowrap}
+.facts p{min-width:0}
+.facts p b{white-space:normal;font-family:inherit;font-size:inherit}
+.facts.probs{gap:32px}
+.facts.probs li{gap:18px}
+.facts.probs .col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:14px}
+.facts.probs figcaption{font-size:16px;line-height:1.5}
+@media (max-width:767px){.facts.probs li{flex-direction:column;gap:8px}.facts.probs .col{width:100%}.facts.probs figcaption{font-size:17px}}
+figure{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+figcaption{font-size:16px;color:var(--sub)}
+/* creative / threads / geo */
+.split2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px;align-items:stretch}
+.col{display:flex;flex-direction:column;gap:16px;min-width:0}
+.split3{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px}
+.split4{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px}
+.geo2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.pos{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.pos .eyebrow{color:var(--red)}
+.pos h3{color:var(--ink)}
+.pos p:last-child{color:var(--sub)}
+.chain{display:flex;align-items:center;gap:10px}
+.stop{flex:1 1 0;min-width:0;background:var(--bg2);border-radius:12px;padding:16px 8px;text-align:center;font-size:18px;font-weight:700;line-height:1.3;overflow-wrap:anywhere}
+.stop.end{background:#EADFD6;color:var(--ink);border:2px solid var(--red)}
+.ar{flex:none;color:var(--red);font-weight:700;font-size:22px}
+.pair{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:32px}
+/* tables */
+table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:20px;line-height:1.5;border:1px solid var(--line);background:var(--panel)}
+th{background:#EADFD6;color:var(--ink);text-align:left;padding:16px 20px;font-weight:700}
+td{padding:16px 20px;vertical-align:top;border-top:1px solid var(--line);overflow-wrap:anywhere}
+tbody tr:nth-child(even){background:var(--bg2)}
+.alt tbody tr:nth-child(even){background:var(--bg)}
+td.k{font-weight:700}
+td.em{color:var(--red);font-weight:700}
+/* next */
+.steps{list-style:none;padding:0;display:flex;flex-direction:column;gap:22px;max-width:1400px}
+.steps li{display:flex;gap:26px;align-items:flex-start}
+.steps b{font-family:var(--hf);font-size:44px;line-height:1;color:var(--red);font-weight:700;white-space:nowrap}
+.steps span{font-size:clamp(22px,2.4vw,34px);line-height:1.45}
+.endrow{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.endrow .big{font-size:32px;font-weight:700}
+.endrow .small{font-size:22px;color:var(--mute)}
+.cvbottom{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.cvbottom .l{font-size:22px;color:var(--mute)}
+.cvbottom .n{font-size:32px;font-weight:700}
+.cvsub{font-size:clamp(22px,2.6vw,38px);line-height:1.4;color:var(--sub);font-weight:500}
+.cvhr{width:120px;border:0;border-top:6px solid #B5262D;margin:16px 0 0}
+.cvtop{display:flex;flex-direction:column;gap:16px}
+.cvmid{display:flex;flex-direction:column;gap:28px}
+.pfoot{padding:48px 24px;text-align:center;color:var(--sub);font-size:16px;display:flex;flex-direction:column;gap:6px;background:var(--bg)}
+@media (min-width:1024px){
+html{scroll-snap-type:y proximity}
+}
+@media (min-width:1024px) and (max-width:1279px){
+.split3{grid-template-columns:minmax(0,1fr)}
+}
+@media (min-width:768px) and (max-width:1023px){
+.in{min-height:0;padding:30px}
+.slide{padding:12px 0}
+.ft{position:static;margin-top:8px}
+.card,.panel{background:var(--bg2);border:0;border-radius:12px}
+.alt .card,.alt .panel{background:var(--bg)}
+.cards.c3,.cards.c4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cards.c3 .card:last-child{grid-column:1/-1}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.split,.split2,.split3{grid-template-columns:minmax(0,1fr)}
+.split4,.pair{grid-template-columns:repeat(2,minmax(0,1fr))}
+.two{grid-template-columns:minmax(0,1fr);gap:16px}
+table{font-size:18px}
+th,td{padding:12px 14px}
+.chain{gap:6px}
+.stop{font-size:17px;padding:14px 6px}
+}
+@media (max-width:767px){
+body{font-size:18px}
+.in{min-height:0;padding:20px;gap:24px}
+.slide{padding:12px 0}
+h2{font-size:30px}
+h3{font-size:22px}
+.eyebrow{font-size:18px}
+.ft{position:static;margin-top:4px;font-size:18px;flex-direction:column;gap:4px}
+.card,.panel{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:16px 0 0}
+.cards{gap:20px}
+.cards.c3,.cards.c4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cards.c3 .card:last-child{grid-column:1/-1}
+.cards.rows{grid-template-columns:minmax(0,1fr)}
+.card dt{font-size:18px}
+.card.num dt,.card.row dt{font-size:32px}
+.card.row{padding:14px 0 0}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.stat{padding:20px}
+.stat dt{font-size:40px}
+.stat dd{font-size:18px}
+.two{grid-template-columns:minmax(0,1fr);gap:16px;font-size:18px}
+.split,.split2,.split3,.split4,.pair,.geo2{grid-template-columns:minmax(0,1fr);gap:24px}
+.band,.note{padding:20px}
+.pos{padding:20px}
+figcaption{font-size:18px}
+.chain{flex-direction:column;align-items:stretch;gap:6px}
+.stop{flex:none;font-size:18px;padding:14px 10px}
+.ar{font-size:0;text-align:center;line-height:1}
+.ar::after{content:"↓";font-size:26px}
+table,tbody,tr,td{display:block;width:100%}
+table{border:0;background:none;font-size:18px}
+colgroup{display:none}
+thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+tbody tr,tbody tr:nth-child(even),.alt tbody tr:nth-child(even){background:none;border-top:1px solid var(--line);padding:12px 0;margin-bottom:6px}
+td{padding:6px 0;border:0}
+td::before{content:attr(data-label);display:block;font-size:18px;font-weight:700;color:var(--red)}
+.steps li{gap:16px}
+.steps b{font-size:32px}
+.steps span{font-size:20px}
+.endrow,.cvbottom{flex-direction:column;align-items:flex-start;gap:16px}
+.endrow .big,.cvbottom .n{font-size:26px}
+.endrow .small,.cvbottom .l{font-size:18px}
+.cvsub{font-size:22px}
+.pfoot{font-size:18px;padding:32px 20px}
+}
+@media (max-width:480px){
+.cards.c3,.cards.c4,.stats{grid-template-columns:minmax(0,1fr)}
+}
+/* 現況分頁 */
+#cover h1{font-size:clamp(34px,4.4vw,60px);line-height:1.2}
+#cover .cvsub{font-size:clamp(20px,1.8vw,26px);line-height:1.5}
+#tab-proposal h2{font-size:clamp(26px,2.5vw,36px);line-height:1.3}
+.in.cp{min-height:0;padding:40px 48px;justify-content:flex-start}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;background:var(--panel);max-width:100%;min-width:0}
+.tw.nar{max-width:760px}
+.tw table{width:100%;table-layout:auto;border:0;font-size:17px;line-height:1.4;background:none}
+.tw th,.tw td{padding:10px 14px;white-space:nowrap;text-align:right}
+.tw th:first-child,.tw td:first-child,.tw th.tx,.tw td.tx{text-align:left}
+.tw td.nm{white-space:normal;min-width:260px;text-align:left}
+.tw th.nm{min-width:260px}
+.tblt{font-size:22px;font-family:var(--hf);font-weight:700}
+.note-s{font-size:16px;color:var(--mute)}
+@media (max-width:767px){
+.in.cp{padding:20px}
+.tw table{display:table;width:100%;font-size:16px}
+.tw thead{position:static;width:auto;height:auto;overflow:visible;clip:auto}
+.tw thead tr{display:table-row;width:auto}
+.tw colgroup{display:table-column-group}
+.tw tbody{display:table-row-group;width:auto}
+.tw table tbody tr{display:table-row;width:auto;padding:0;margin:0;border-top:0}
+.tw table tbody tr:nth-child(even){background:var(--bg2)}
+.alt .tw table tbody tr:nth-child(even){background:var(--bg)}
+.tw table tbody tr:nth-child(odd){background:none}
+.tw td{display:table-cell;width:auto;padding:10px 12px;border-top:1px solid var(--line)}
+.tw td::before{content:none;display:none}
+}
+</style>
+</head>
+<body>
+<nav class="tabs" role="tablist" aria-label="分頁">
+<button class="tab on" role="tab" aria-selected="true" data-tab="proposal" id="tabbtn-proposal">廣告數據現況</button>
+<button class="tab" role="tab" aria-selected="false" data-tab="google" id="tabbtn-google">待解決問題</button>
+</nav>
+<main id="tab-proposal" role="tabpanel">
+
+<section class="slide t0" id="cover">
+<div class="in sb">
+<div class="cvtop">
+<p class="eyebrow">廣告數據現況</p>
+<hr class="cvhr">
+</div>
+<div class="cvmid">
+<h1>我們是幸福床店｜廣告數據現況與待解決問題</h1>
+<p class="cvsub">更新日 2026/11/24。資料來源：Google Ads 中區、北區南區帳號 2026/11/16–2026/11/22（對照 2026/11/09–2026/11/15）；Meta 廣告帳號同兩週（帳號時區為洛杉磯）；GA4 資源「我們是幸福床店_TW - GA4」同兩週。</p>
+</div>
+<div class="cvbottom">
+<div><p class="l">製作</p><p class="n">Orderdan 簡單營銷</p></div>
+<p class="l">2026 年 11 月 24 日</p>
+</div>
+</div>
+</section>
+
+<section class="slide t1" id="status-google">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">Google 廣告 中區帳號｜2026/11/16–2026/11/22 對照 2026/11/09–2026/11/15</p>
+<h2>中區帳號本週花費 5,212.24 元，點擊 454 次，平均單次點擊 11.48 元</h2>
+</div>
+<p class="tblt">帳戶與類型總計</p>
+<div class="tw"><table>
+<thead><tr><th>類型</th><th>曝光</th><th>曝光（前週）</th><th>點擊</th><th>點擊（前週）</th><th>費用</th><th>費用（前週）</th><th>平均單次點擊出價</th><th>平均單次點擊出價（前週）</th><th>轉換</th><th>轉換（前週）</th><th>轉換價值</th><th>轉換價值（前週）</th></tr></thead>
+<tbody>
+<tr><td class="k">帳戶總計</td><td>11,945</td><td>27,312</td><td>454</td><td>1,037</td><td>5,212.24</td><td>5,662.69</td><td>11.48</td><td>5.46</td><td>942.68</td><td>1,197.12</td><td>831,327.15</td><td>5,807,093.93</td></tr>
+<tr><td class="k">搜尋</td><td>2,141</td><td>2,605</td><td>162</td><td>216</td><td>1,939.56</td><td>2,662.49</td><td>11.97</td><td>12.33</td><td>914.68</td><td>1,165.96</td><td>828,527.15</td><td>5,803,113.53</td></tr>
+<tr><td class="k">最高成效</td><td>9,804</td><td>24,707</td><td>292</td><td>821</td><td>3,272.68</td><td>3,000.2</td><td>11.21</td><td>3.65</td><td>28</td><td>31.16</td><td>2,800</td><td>3,980.4</td></tr>
+</tbody>
+</table></div>
+<p class="tblt">各廣告活動</p>
+<div class="tw"><table>
+<thead><tr><th class="nm">廣告活動</th><th class="tx">廣告活動類型</th><th class="tx">出價策略類型</th><th class="tx">預算</th><th>曝光</th><th>曝光（前週）</th><th>點擊</th><th>點擊（前週）</th><th>費用</th><th>費用（前週）</th><th>平均單次點擊出價</th><th>平均單次點擊出價（前週）</th><th>轉換</th><th>轉換（前週）</th><th>轉換價值</th><th>轉換價值（前週）</th><th>單次轉換費用</th><th>單次轉換費用（前週）</th></tr></thead>
+<tbody>
+<tr><td class="nm k">中區親臨門市(202607修改成只有中彰)-Performance Max-3-202604</td><td class="tx">最高成效</td><td class="tx">盡量提高轉換價值</td><td class="tx">每日 250</td><td>7,363</td><td>14,149</td><td>163</td><td>440</td><td>1,913.93</td><td>1,695.14</td><td>11.74</td><td>3.85</td><td>19</td><td>24</td><td>1,900</td><td>2,301</td><td>100.73</td><td>70.63</td></tr>
+<tr><td class="nm k">新竹親臨門市-Performance Max-3-202607</td><td class="tx">最高成效</td><td class="tx">盡量提高轉換價值</td><td class="tx">每日 200</td><td>2,441</td><td>10,558</td><td>129</td><td>381</td><td>1,358.75</td><td>1,305.06</td><td>10.53</td><td>3.43</td><td>9</td><td>7.16</td><td>900</td><td>1,679.4</td><td>150.97</td><td>182.19</td></tr>
+<tr><td class="nm k">鹿港關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 6,300</td><td>418</td><td>696</td><td>24</td><td>43</td><td>354.97</td><td>536.97</td><td>14.79</td><td>12.49</td><td>119.71</td><td>174.83</td><td>62,881.52</td><td>1,043,899.33</td><td>2.97</td><td>3.07</td></tr>
+<tr><td class="nm k">大里關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 6,300</td><td>408</td><td>591</td><td>26</td><td>42</td><td>364.95</td><td>531.8</td><td>14.04</td><td>12.66</td><td>161.45</td><td>147.67</td><td>296,672.75</td><td>982,649.67</td><td>2.26</td><td>3.6</td></tr>
+<tr><td class="nm k">竹北關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 6,300</td><td>472</td><td>441</td><td>35</td><td>48</td><td>453.73</td><td>571.29</td><td>12.96</td><td>11.9</td><td>217.26</td><td>276.48</td><td>13,504.73</td><td>1,023,491.32</td><td>2.09</td><td>2.07</td></tr>
+<tr><td class="nm k">光復關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 6,300</td><td>396</td><td>535</td><td>32</td><td>41</td><td>376.07</td><td>481.94</td><td>11.75</td><td>11.75</td><td>154.52</td><td>250.43</td><td>113,532.91</td><td>1,506,293.86</td><td>2.43</td><td>1.92</td></tr>
+<tr><td class="nm k">北屯關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 6,300</td><td>447</td><td>342</td><td>45</td><td>42</td><td>389.85</td><td>540.48</td><td>8.66</td><td>12.87</td><td>261.75</td><td>316.54</td><td>341,935.25</td><td>1,246,779.34</td><td>1.49</td><td>1.71</td></tr>
+</tbody>
+</table></div>
+<ol class="facts">
+<li><b>01</b><p>兩支最高成效活動本週點擊 292 次（前週 821 次），費用 3,272.68 元（前週 3,000.2 元），平均單次點擊 11.21 元（前週 3.65 元）。</p></li>
+<li><b>02</b><p>5 支搜尋活動本週 162 次點擊、費用 1,939.56 元，記到 914.68 次轉換、轉換價值 828,527.15 元（前週 216 次點擊、1,165.96 次轉換、5,803,113.53 元）。</p></li>
+<li><b>03</b><p>每次轉換價值（轉換價值 ÷ 轉換）：搜尋活動本週 906 元，前週 4,977 元。</p></li>
+</ol>
+<p class="note-s">前週數字取自 2026/11/24 重新下載的報表，與 2026/11/16 版略有出入。</p>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 廣告數據現況 ｜ 數據：Google Ads 中區帳號 2026/11/16–2026/11/22</p><p>01</p></div>
+</div>
+</section>
+
+<section class="slide alt t2" id="status-google-north">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">Google 廣告 北區南區帳號｜2026/11/16–2026/11/22 對照 2026/11/09–2026/11/15</p>
+<h2>北區南區帳號本週花費 13,578.81 元，點擊 1,027 次，平均單次點擊 13.22 元</h2>
+</div>
+<p class="tblt">帳戶與類型總計</p>
+<div class="tw"><table>
+<thead><tr><th>類型</th><th>曝光</th><th>曝光（前週）</th><th>點擊</th><th>點擊（前週）</th><th>費用</th><th>費用（前週）</th><th>平均單次點擊出價</th><th>平均單次點擊出價（前週）</th><th>轉換</th><th>轉換（前週）</th><th>轉換價值</th><th>轉換價值（前週）</th></tr></thead>
+<tbody>
+<tr><td class="k">帳戶總計</td><td>133,280</td><td>177,570</td><td>1,027</td><td>1,482</td><td>13,578.81</td><td>12,752.86</td><td>13.22</td><td>8.61</td><td>182</td><td>404.3</td><td>66,368</td><td>1,832,654.22</td></tr>
+<tr><td class="k">搜尋</td><td>5,077</td><td>4,755</td><td>338</td><td>339</td><td>5,934.32</td><td>6,587.85</td><td>17.56</td><td>19.43</td><td>119</td><td>313.3</td><td>60,068</td><td>1,823,554.22</td></tr>
+<tr><td class="k">最高成效</td><td>128,203</td><td>172,815</td><td>689</td><td>1,143</td><td>7,644.49</td><td>6,165.02</td><td>11.1</td><td>5.39</td><td>63</td><td>91</td><td>6,300</td><td>9,100</td></tr>
+</tbody>
+</table></div>
+<p class="tblt">各廣告活動</p>
+<div class="tw"><table>
+<thead><tr><th class="nm">廣告活動</th><th class="tx">廣告活動類型</th><th class="tx">出價策略類型</th><th class="tx">預算</th><th>曝光</th><th>曝光（前週）</th><th>點擊</th><th>點擊（前週）</th><th>費用</th><th>費用（前週）</th><th>平均單次點擊出價</th><th>平均單次點擊出價（前週）</th><th>轉換</th><th>轉換（前週）</th><th>轉換價值</th><th>轉換價值（前週）</th><th>單次轉換費用</th><th>單次轉換費用（前週）</th></tr></thead>
+<tbody>
+<tr><td class="nm k">台南-最佳成效-親臨門市</td><td class="tx">最高成效</td><td class="tx">盡量提高轉換價值</td><td class="tx">每日 230</td><td>42,804</td><td>41,014</td><td>203</td><td>140</td><td>1,670.59</td><td>1,500.44</td><td>8.23</td><td>10.72</td><td>16</td><td>30.5</td><td>1,600</td><td>3,050</td><td>104.41</td><td>49.19</td></tr>
+<tr><td class="nm k">高雄-最高成效-親臨門市</td><td class="tx">最高成效</td><td class="tx">盡量提高轉換價值</td><td class="tx">每日 230</td><td>45,074</td><td>66,994</td><td>172</td><td>227</td><td>1,565.61</td><td>1,566.46</td><td>9.1</td><td>6.9</td><td>14</td><td>27.5</td><td>1,400</td><td>2,750</td><td>111.83</td><td>56.96</td></tr>
+<tr><td class="nm k">最高成效_北區南區_202605</td><td class="tx">最高成效</td><td class="tx">盡量提高轉換價值</td><td class="tx">每日 270</td><td>14,134</td><td>24,044</td><td>189</td><td>612</td><td>2,838.32</td><td>1,465.48</td><td>15.02</td><td>2.39</td><td>16</td><td>4</td><td>1,600</td><td>400</td><td>177.39</td><td>366.37</td></tr>
+<tr><td class="nm k">雲林嘉義-最佳成效-親臨門市</td><td class="tx">最高成效</td><td class="tx">盡量提高轉換價值</td><td class="tx">每日 230</td><td>26,191</td><td>40,763</td><td>125</td><td>164</td><td>1,569.97</td><td>1,632.64</td><td>12.56</td><td>9.96</td><td>17</td><td>29</td><td>1,700</td><td>2,900</td><td>92.35</td><td>56.3</td></tr>
+<tr><td class="nm k">虎尾關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 8,400</td><td>529</td><td>228</td><td>30</td><td>27</td><td>498.87</td><td>501.63</td><td>16.63</td><td>18.58</td><td>4</td><td>5</td><td>400</td><td>500</td><td>124.72</td><td>100.33</td></tr>
+<tr><td class="nm k">鳥松關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 8,400</td><td>282</td><td>254</td><td>23</td><td>15</td><td>658.34</td><td>532.29</td><td>28.62</td><td>35.49</td><td>3</td><td>6</td><td>300</td><td>600</td><td>219.45</td><td>88.71</td></tr>
+<tr><td class="nm k">蘆洲關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 8,400</td><td>528</td><td>799</td><td>51</td><td>46</td><td>580.64</td><td>1,015.94</td><td>11.39</td><td>22.09</td><td>9</td><td>8.34</td><td>900</td><td>833.6</td><td>64.52</td><td>121.87</td></tr>
+<tr><td class="nm k">桃園關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 8,400</td><td>562</td><td>499</td><td>31</td><td>37</td><td>559.83</td><td>767.72</td><td>18.06</td><td>20.75</td><td>86</td><td>225.96</td><td>56,768</td><td>1,814,820.61</td><td>6.51</td><td>3.4</td></tr>
+<tr><td class="nm k">嘉義關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 8,400</td><td>547</td><td>570</td><td>28</td><td>38</td><td>557.05</td><td>614.75</td><td>19.89</td><td>16.18</td><td>4</td><td>18</td><td>400</td><td>1,800</td><td>139.26</td><td>34.15</td></tr>
+<tr><td class="nm k">裕農關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 8,400</td><td>295</td><td>462</td><td>25</td><td>37</td><td>473.85</td><td>727.92</td><td>18.95</td><td>19.67</td><td>1</td><td>4.33</td><td>100</td><td>433.33</td><td>473.85</td><td>167.98</td></tr>
+<tr><td class="nm k">健康關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 8,400</td><td>483</td><td>495</td><td>34</td><td>33</td><td>614.54</td><td>563.51</td><td>18.07</td><td>17.08</td><td>2</td><td>9.33</td><td>200</td><td>933.33</td><td>307.27</td><td>60.38</td></tr>
+<tr><td class="nm k">博愛關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 8,400</td><td>380</td><td>436</td><td>28</td><td>33</td><td>852.08</td><td>543.93</td><td>30.43</td><td>16.48</td><td>4</td><td>8</td><td>400</td><td>800</td><td>213.02</td><td>67.99</td></tr>
+<tr><td class="nm k">土城關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 8,400</td><td>618</td><td>639</td><td>34</td><td>44</td><td>431.77</td><td>786.95</td><td>12.7</td><td>17.89</td><td>1</td><td>13</td><td>100</td><td>1,300</td><td>431.77</td><td>60.53</td></tr>
+<tr><td class="nm k">海佃關鍵字_202609-11</td><td class="tx">搜尋</td><td class="tx">盡量提高轉換價值</td><td class="tx">總預算 8,400</td><td>853</td><td>373</td><td>54</td><td>29</td><td>707.36</td><td>533.21</td><td>13.1</td><td>18.39</td><td>5</td><td>15.33</td><td>500</td><td>1,533.33</td><td>141.47</td><td>34.77</td></tr>
+</tbody>
+</table></div>
+<ol class="facts">
+<li><b>01</b><p>4 支最高成效活動本週點擊 689 次（前週 1,143 次），費用 7,644.49 元（前週 6,165.02 元），平均單次點擊 11.10 元（前週 5.39 元）。</p></li>
+<li><b>02</b><p>「最高成效_北區南區_202605」點擊 189 次（前週 612 次），費用 2,838.32 元（前週 1,465.48 元）。</p></li>
+<li><b>03</b><p>10 支搜尋活動本週 338 次點擊（前週 339 次），費用 5,934.32 元（前週 6,587.85 元），平均單次點擊 17.56 元（前週 19.43 元）。</p></li>
+<li><b>04</b><p>桃園關鍵字活動本週 31 次點擊記到 86 次轉換、轉換價值 56,768 元；其餘 9 支搜尋活動合計 307 次點擊、33 次轉換、每次轉換價值 100 元。</p></li>
+</ol>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 廣告數據現況 ｜ 數據：Google Ads 北區南區帳號 2026/11/16–2026/11/22</p><p>02</p></div>
+</div>
+</section>
+
+<section class="slide t1" id="status-google-goal">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">Google 廣告｜轉換目標｜Google Ads 對照 GA4（2026/11/16–2026/11/22）</p>
+<h2>轉換目標異常：網站瀏覽目標失準</h2>
+</div>
+<p class="sub">把 Google Ads 兩個帳號記到的轉換，和同一週 GA4 裡來源為 google / cpc 的實際行為放在一起看。GA4 取「事件」報表（事件名稱 × 最初招攬到使用者的來源/媒介）。</p>
+<p class="tblt">Google Ads 記到的，對照 GA4 看到的</p>
+<div class="tw nar"><table>
+<thead><tr><th>項目</th><th>本週</th><th>前週</th></tr></thead>
+<tbody>
+<tr><td class="k">Google Ads 轉換（兩帳號）</td><td>1,124.68</td><td>1,601.42</td></tr>
+<tr><td class="k">GA4 view_item（google / cpc）</td><td>606</td><td>1,192</td></tr>
+<tr><td class="k">GA4 門市與介紹頁事件（google / cpc）</td><td>178</td><td>186</td></tr>
+<tr><td class="k">GA4 加入購物車（google / cpc）</td><td>9</td><td>19</td></tr>
+<tr><td class="k">GA4 購買（google / cpc）</td><td>0</td><td>1</td></tr>
+<tr><td class="k">Google Ads 轉換價值（兩帳號，元）</td><td>897,695.15</td><td>7,639,748.15</td></tr>
+<tr><td class="k">GA4 購買收益（google / cpc，元）</td><td>0</td><td>6,000</td></tr>
+</tbody>
+</table></div>
+<ol class="facts">
+<li><b>01</b><p>Google Ads 本週記到 1,124.68 次轉換；GA4 同一週的 view_item 加門市與介紹頁事件是 784 次。</p></li>
+<li><b>02</b><p>中區 5 支搜尋活動 162 次點擊記到 914.68 次轉換，平均每次點擊 5.65 次；GA4 裡 google / cpc 每個工作階段的 view_item 是 0.80 次、門市與介紹頁事件 0.23 次。</p></li>
+<li><b>03</b><p>Google Ads 本週記到轉換價值 897,695.15 元；GA4 同來源的購買收益是 0 元（前週 7,639,748.15 元對 6,000 元）。</p></li>
+<li><b>04</b><p>以「網站瀏覽」當轉換的目標，次數與價值都對不上到店與成交；轉換目標的調整見「<a href="#g-issue2">待解決問題</a>」分頁的調整重點二。</p></li>
+</ol>
+<p class="note-s">門市與介紹頁事件是 22 個門市頁、介紹頁事件的加總。GA4 這份報表沒有廣告活動維度，只能兩個帳號合計對照。</p>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 廣告數據現況 ｜ 數據：Google Ads 兩個帳號、GA4 2026/11/16–2026/11/22</p><p>03</p></div>
+</div>
+</section>
+
+<section class="slide alt t2" id="status-meta">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">FB／IG 廣告｜Meta 廣告帳號「我們是幸福床店」｜2026/11/16–2026/11/22 對照 2026/11/09–2026/11/15</p>
+<h2>本週花費 14,426 元，連結點擊 1,058 次，每次連結點擊成本 13.64 元</h2>
+</div>
+<p class="sub">10 間門市各一支活動（蘆洲、土城、桃園、虎尾、嘉義、健康、裕農、海佃、博愛、鳥松）；活動目標都是品牌認知；每支活動總預算 12,600 元；檔期 2026/10/02–2026/12/01。數據透過 Meta MCP 讀取，帳號時區為洛杉磯。2026/11/10 有一輪廣告組受眾設定調整（年齡上限由 60 改 50、自訂受眾增減），落在前週。</p>
+<p class="tblt">帳號成效</p>
+<div class="tw nar"><table>
+<thead><tr><th>指標</th><th>本週</th><th>前週</th><th>變化</th><th>變化 %</th></tr></thead>
+<tbody>
+<tr><td class="k">花費（元）</td><td>14,426</td><td>15,273</td><td>-847</td><td>-5.5%</td></tr>
+<tr><td class="k">觸及</td><td>504,693</td><td>466,699</td><td>+37,994</td><td>+8.1%</td></tr>
+<tr><td class="k">曝光</td><td>983,770</td><td>913,832</td><td>+69,938</td><td>+7.7%</td></tr>
+<tr><td class="k">連結點擊</td><td>1,058</td><td>850</td><td>+208</td><td>+24.5%</td></tr>
+<tr><td class="k">每次連結點擊成本（元）</td><td>13.64</td><td>17.97</td><td>-4.33</td><td>-24.1%</td></tr>
+<tr><td class="k">到達頁瀏覽</td><td>658</td><td>473</td><td>+185</td><td>+39.1%</td></tr>
+</tbody>
+</table></div>
+<p class="tblt">平台</p>
+<div class="tw nar"><table>
+<thead><tr><th>平台</th><th>花費（元）</th><th>花費（前週）</th><th>連結點擊</th><th>連結點擊（前週）</th><th>每次連結點擊成本（元）</th><th>每次連結點擊成本（前週）</th><th>到達頁瀏覽</th><th>到達頁瀏覽（前週）</th></tr></thead>
+<tbody>
+<tr><td class="k">Facebook</td><td>12,967</td><td>13,916</td><td>685</td><td>539</td><td>18.93</td><td>25.82</td><td>426</td><td>297</td></tr>
+<tr><td class="k">Threads</td><td>1,447</td><td>1,332</td><td>372</td><td>310</td><td>3.89</td><td>4.30</td><td>231</td><td>176</td></tr>
+<tr><td class="k">Instagram</td><td>12</td><td>25</td><td>1</td><td>1</td><td>12.00</td><td>25.00</td><td>1</td><td></td></tr>
+</tbody>
+</table></div>
+<p class="tblt">年齡 × 性別</p>
+<div class="tw nar"><table>
+<thead><tr><th>年齡</th><th class="tx">性別</th><th>花費（元）</th><th>花費（前週）</th><th>連結點擊</th><th>連結點擊（前週）</th><th>每次連結點擊成本（元）</th><th>每次連結點擊成本（前週）</th></tr></thead>
+<tbody>
+<tr><td class="k">25–34</td><td class="tx">女性</td><td>599</td><td>397</td><td>111</td><td>79</td><td>5.4</td><td>5.0</td></tr>
+<tr><td class="k">25–34</td><td class="tx">男性</td><td>1,130</td><td>1,314</td><td>170</td><td>156</td><td>6.6</td><td>8.4</td></tr>
+<tr><td class="k">35–44</td><td class="tx">女性</td><td>714</td><td>527</td><td>63</td><td>41</td><td>11.3</td><td>12.9</td></tr>
+<tr><td class="k">35–44</td><td class="tx">男性</td><td>1,627</td><td>1,771</td><td>144</td><td>112</td><td>11.3</td><td>15.8</td></tr>
+<tr><td class="k">45–54</td><td class="tx">女性</td><td>1,120</td><td>997</td><td>98</td><td>61</td><td>11.4</td><td>16.3</td></tr>
+<tr><td class="k">45–54</td><td class="tx">男性</td><td>2,454</td><td>2,555</td><td>124</td><td>110</td><td>19.8</td><td>23.2</td></tr>
+<tr><td class="k">55–64</td><td class="tx">女性</td><td>1,430</td><td>1,595</td><td>91</td><td>71</td><td>15.7</td><td>22.5</td></tr>
+<tr><td class="k">55–64</td><td class="tx">男性</td><td>2,676</td><td>3,017</td><td>114</td><td>91</td><td>23.5</td><td>33.2</td></tr>
+<tr><td class="k">65 以上</td><td class="tx">女性</td><td>1,036</td><td>1,249</td><td>54</td><td>55</td><td>19.2</td><td>22.7</td></tr>
+<tr><td class="k">65 以上</td><td class="tx">男性</td><td>1,575</td><td>1,772</td><td>82</td><td>67</td><td>19.2</td><td>26.4</td></tr>
+</tbody>
+</table></div>
+<ol class="facts">
+<li><b>01</b><p>花費少 5.5%，連結點擊多 24.5%，每次連結點擊成本由 17.97 元降到 13.64 元。</p></li>
+<li><b>02</b><p>廣告組的性別都設女性；本週 65.6% 的花費落在男性（前週 68.3%）。</p></li>
+<li><b>03</b><p>35–54 歲女性佔花費 12.7%（前週 10.0%），連結點擊 161 次（前週 102 次）；55 歲以上佔花費 46.6%（前週 50.0%）。</p></li>
+</ol>
+<p class="note-s">每次連結點擊成本＝花費 ÷ 連結點擊。性別未知的花費本週 65 元、前週 79 元，未列入年齡 × 性別表。</p>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 廣告數據現況 ｜ 數據：Meta 廣告帳號 2026/11/16–2026/11/22</p><p>04</p></div>
+</div>
+</section>
+
+<section class="slide t1" id="status-meta-ads">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">FB／IG 廣告｜逐支廣告加總｜2026/11/16–2026/11/22 對照 2026/11/09–2026/11/15</p>
+<h2>多出來的連結點擊集中在名單組，以及土城、博愛、海佃三間</h2>
+</div>
+<p class="sub">把本週與前週有花費的廣告逐支讀出（各 66 支），再依廣告組類型、門市、素材主題加總。素材主題取廣告名稱最後一段。</p>
+<p class="tblt">廣告組類型</p>
+<div class="tw nar"><table>
+<thead><tr><th>類型</th><th>花費（元）</th><th>花費（前週）</th><th>連結點擊</th><th>連結點擊（前週）</th><th>每次連結點擊成本（元）</th><th>每次連結點擊成本（前週）</th><th>到達頁瀏覽</th><th>到達頁瀏覽（前週）</th></tr></thead>
+<tbody>
+<tr><td class="k">名單</td><td>11,838</td><td>12,493</td><td>747</td><td>548</td><td>15.8</td><td>22.8</td><td>503</td><td>329</td></tr>
+<tr><td class="k">高速成效</td><td>2,588</td><td>2,710</td><td>309</td><td>294</td><td>8.4</td><td>9.2</td><td>154</td><td>140</td></tr>
+</tbody>
+</table></div>
+<p class="tblt">門市</p>
+<div class="tw nar"><table>
+<thead><tr><th>門市</th><th>花費（元）</th><th>花費（前週）</th><th>連結點擊</th><th>連結點擊（前週）</th><th>每次連結點擊成本（元）</th><th>每次連結點擊成本（前週）</th></tr></thead>
+<tbody>
+<tr><td class="k">土城</td><td>1,527</td><td>1,512</td><td>167</td><td>80</td><td>9.1</td><td>18.9</td></tr>
+<tr><td class="k">博愛</td><td>1,465</td><td>1,542</td><td>95</td><td>54</td><td>15.4</td><td>28.6</td></tr>
+<tr><td class="k">海佃</td><td>1,405</td><td>1,506</td><td>91</td><td>55</td><td>15.4</td><td>27.4</td></tr>
+<tr><td class="k">蘆洲</td><td>1,443</td><td>1,527</td><td>118</td><td>97</td><td>12.2</td><td>15.7</td></tr>
+<tr><td class="k">虎尾</td><td>1,415</td><td>1,511</td><td>124</td><td>106</td><td>11.4</td><td>14.3</td></tr>
+<tr><td class="k">健康</td><td>1,413</td><td>1,509</td><td>83</td><td>70</td><td>17.0</td><td>21.6</td></tr>
+<tr><td class="k">鳥松</td><td>1,454</td><td>1,540</td><td>90</td><td>86</td><td>16.2</td><td>17.9</td></tr>
+<tr><td class="k">裕農</td><td>1,395</td><td>1,470</td><td>80</td><td>77</td><td>17.4</td><td>19.1</td></tr>
+<tr><td class="k">嘉義</td><td>1,418</td><td>1,512</td><td>86</td><td>87</td><td>16.5</td><td>17.4</td></tr>
+<tr><td class="k">桃園</td><td>1,491</td><td>1,574</td><td>122</td><td>130</td><td>12.2</td><td>12.1</td></tr>
+</tbody>
+</table></div>
+<p class="tblt">素材主題（本週花費 400 元以上，另列睡眠冷知識）</p>
+<div class="tw nar"><table>
+<thead><tr><th>素材主題</th><th>花費（元）</th><th>花費（前週）</th><th>連結點擊</th><th>連結點擊（前週）</th><th>每次連結點擊成本（元）</th><th>每次連結點擊成本（前週）</th></tr></thead>
+<tbody>
+<tr><td class="k">換季麻吉貓</td><td>2,696</td><td>4,214</td><td>125</td><td>116</td><td>21.6</td><td>36.3</td></tr>
+<tr><td class="k">活動</td><td>1,381</td><td>840</td><td>75</td><td>52</td><td>18.4</td><td>16.2</td></tr>
+<tr><td class="k">1-2萬床墊</td><td>1,127</td><td>472</td><td>70</td><td>23</td><td>16.1</td><td>20.5</td></tr>
+<tr><td class="k">捲包床墊NO</td><td>1,116</td><td>1,482</td><td>71</td><td>62</td><td>15.7</td><td>23.9</td></tr>
+<tr><td class="k">雙11床</td><td>1,062</td><td>1,037</td><td>167</td><td>147</td><td>6.4</td><td>7.1</td></tr>
+<tr><td class="k">臥室空間</td><td>947</td><td>548</td><td>53</td><td>34</td><td>17.9</td><td>16.1</td></tr>
+<tr><td class="k">大吳不折被子</td><td>916</td><td>1,025</td><td>45</td><td>49</td><td>20.4</td><td>20.9</td></tr>
+<tr><td class="k">幸福架起來</td><td>686</td><td>1,115</td><td>48</td><td>44</td><td>14.3</td><td>25.3</td></tr>
+<tr><td class="k">雙11冰冰被</td><td>623</td><td>697</td><td>103</td><td>85</td><td>6.0</td><td>8.2</td></tr>
+<tr><td class="k">床墊尺寸</td><td>509</td><td>102</td><td>20</td><td>4</td><td>25.5</td><td>25.5</td></tr>
+<tr><td class="k">床店_7_開箱！營收兩億的床墊工廠</td><td>502</td><td>518</td><td>36</td><td>34</td><td>13.9</td><td>15.2</td></tr>
+<tr><td class="k">大吳闆娘工廠ASMR</td><td>417</td><td>522</td><td>53</td><td>40</td><td>7.9</td><td>13.1</td></tr>
+<tr><td class="k">睡眠冷知識</td><td>168</td><td>0</td><td>38</td><td>0</td><td>4.4</td><td></td></tr>
+</tbody>
+</table></div>
+<ol class="facts">
+<li><b>01</b><p>名單組連結點擊 747 次（前週 548 次），每次連結點擊成本 15.8 元（前週 22.8 元）；名單組佔本週花費 82%。</p></li>
+<li><b>02</b><p>土城、博愛、海佃三間合計多 164 次連結點擊。</p></li>
+<li><b>03</b><p>「換季麻吉貓」花費由 4,214 元降到 2,696 元，每次連結點擊成本由 36.3 元降到 21.6 元；同期「1-2萬床墊」「活動」「臥室空間」「床墊尺寸」的花費增加。</p></li>
+<li><b>04</b><p>2026/11/18 換上的 9 支「睡眠冷知識」：土城名單組那支花費 164 元、連結點擊 36 次；其餘 8 支在高速成效組，合計花費 4 元。</p></li>
+</ol>
+<p class="note-s">逐支加總只含有花費的廣告，與帳號層數字略有出入（前週花費少 70 元、連結點擊少 8 次）。「雙11冰冰被」含名稱為「床店_雙11冰冰被」的一支。</p>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 廣告數據現況 ｜ 數據：Meta 廣告帳號 2026/11/16–2026/11/22</p><p>05</p></div>
+</div>
+</section>
+
+<section class="slide alt t2" id="status-meta-ga4">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">FB／IG 廣告｜Meta 對照 GA4｜2026/11/16–2026/11/22 對照 2026/11/09–2026/11/15</p>
+<h2>連結點擊 1,058 次，GA4 記到 1,159 個工作階段，進站後看商品 2 次</h2>
+</div>
+<p class="sub">Meta 的連結點擊與到達頁瀏覽，對照 GA4「流量開發」報表的 Paid Social、Paid Other 兩個管道，以及「事件」報表的 fb / paid、th / paid。Meta 帳號時區為洛杉磯，GA4 與它相差 16 小時。</p>
+<p class="tblt">點擊對照進站</p>
+<div class="tw nar"><table>
+<thead><tr><th>平台</th><th class="tx">週</th><th>Meta 連結點擊</th><th>Meta 到達頁瀏覽</th><th>GA4 工作階段</th></tr></thead>
+<tbody>
+<tr><td class="k">Facebook 對 Paid Social</td><td class="tx">本週</td><td>685</td><td>426</td><td>747</td></tr>
+<tr><td class="k">Facebook 對 Paid Social</td><td class="tx">前週</td><td>539</td><td>297</td><td>641</td></tr>
+<tr><td class="k">Threads 對 Paid Other</td><td class="tx">本週</td><td>372</td><td>231</td><td>412</td></tr>
+<tr><td class="k">Threads 對 Paid Other</td><td class="tx">前週</td><td>310</td><td>176</td><td>344</td></tr>
+<tr><td class="k">合計</td><td class="tx">本週</td><td>1,058</td><td>658</td><td>1,159</td></tr>
+<tr><td class="k">合計</td><td class="tx">前週</td><td>850</td><td>473</td><td>985</td></tr>
+</tbody>
+</table></div>
+<p class="tblt">進站後的行為（GA4 事件報表）</p>
+<div class="tw nar"><table>
+<thead><tr><th>來源</th><th class="tx">指標</th><th>本週</th><th>前週</th></tr></thead>
+<tbody>
+<tr><td class="k">fb / paid</td><td class="tx">工作階段</td><td>751</td><td>644</td></tr>
+<tr><td class="k">fb / paid</td><td class="tx">page_view</td><td>794</td><td>677</td></tr>
+<tr><td class="k">fb / paid</td><td class="tx">每個工作階段頁數</td><td>1.06</td><td>1.05</td></tr>
+<tr><td class="k">fb / paid</td><td class="tx">view_item</td><td>2</td><td>0</td></tr>
+<tr><td class="k">fb / paid</td><td class="tx">門市與介紹頁事件</td><td>4</td><td>0</td></tr>
+<tr><td class="k">th / paid</td><td class="tx">工作階段</td><td>425</td><td>347</td></tr>
+<tr><td class="k">th / paid</td><td class="tx">page_view</td><td>433</td><td>354</td></tr>
+<tr><td class="k">th / paid</td><td class="tx">每個工作階段頁數</td><td>1.02</td><td>1.02</td></tr>
+<tr><td class="k">th / paid</td><td class="tx">view_item</td><td>0</td><td>1</td></tr>
+<tr><td class="k">google / cpc</td><td class="tx">工作階段</td><td>759</td><td>1,574</td></tr>
+<tr><td class="k">google / cpc</td><td class="tx">每個工作階段頁數</td><td>2.91</td><td>2.05</td></tr>
+<tr><td class="k">google / cpc</td><td class="tx">view_item</td><td>606</td><td>1,192</td></tr>
+<tr><td class="k">google / cpc</td><td class="tx">門市與介紹頁事件</td><td>178</td><td>186</td></tr>
+</tbody>
+</table></div>
+<p class="tblt">平均參與時間（GA4 流量開發報表，秒）</p>
+<div class="tw nar"><table>
+<thead><tr><th>管道</th><th>本週</th><th>前週</th></tr></thead>
+<tbody>
+<tr><td class="k">Paid Social</td><td>0.79</td><td>0.51</td></tr>
+<tr><td class="k">Paid Other</td><td>0.01</td><td>0.09</td></tr>
+<tr><td class="k">Paid Search</td><td>75.50</td><td>67.50</td></tr>
+<tr><td class="k">Cross-network</td><td>65.59</td><td>26.64</td></tr>
+</tbody>
+</table></div>
+<ol class="facts">
+<li><b>01</b><p>FB 與 Threads 廣告本週帶進 1,176 個工作階段（事件報表），平均 1.04 頁；view_item 2 次、門市與介紹頁事件 4 次。</p></li>
+<li><b>02</b><p>同一週 Google 廣告帶進 759 個工作階段，平均 2.91 頁；view_item 606 次、門市與介紹頁事件 178 次。</p></li>
+<li><b>03</b><p>GA4 流量開發報表記到的工作階段（1,159）比 Meta 的連結點擊（1,058）多 9.5%，比到達頁瀏覽（658）多 76.1%；兩邊數字的落差原因待查。</p></li>
+</ol>
+<p class="note-s">Paid Social 對 Facebook、Paid Other 對 Threads，依事件報表 fb / paid、th / paid 的工作階段數相近對應。流量開發報表按工作階段歸因，事件報表按最初招攬來源歸因，兩張表的工作階段數不會相等。</p>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 廣告數據現況 ｜ 數據：Meta 廣告帳號、GA4 2026/11/16–2026/11/22</p><p>06</p></div>
+</div>
+</section>
+
+</main>
+<main id="tab-google" role="tabpanel" hidden>
+
+<section class="slide t1" id="g-fb">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">FB／IG 廣告：待解決問題</p>
+<h2>目標設在「觸及」，百萬曝光換不到千次點選</h2>
+</div>
+<dl class="stats">
+<div class="stat"><dt>120.7 萬</dt><dd>10 支活動的觸及人數</dd></div>
+<div class="stat"><dt>3,431</dt><dd>連結點擊次數</dd></div>
+<div class="stat"><dt>19 元</dt><dd>每次連結點擊成本</dd></div>
+<div class="stat"><dt>0.09%</dt><dd>連結點擊率（3,431 ÷ 3,962,937 次曝光）</dd></div>
+</dl>
+<div class="two">
+<p>觸及目標只追「最多人看到」，不會去找有床墊需求的人。床墊需求在人群中估計不到 5%，所以曝光再高，點進來的仍是少數。</p>
+<p>我方經驗：每次連結點擊成本超過 4 元就該檢討；2026/10/17–2026/11/15 這個區間是 19 元。</p>
+</div>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 廣告數據現況與待解決問題 ｜ 數據：Meta 廣告帳號 2026/10/17–2026/11/15</p><p>01</p></div>
+</div>
+</section>
+
+<section class="slide alt t2" id="g-update">
+<div class="in cp">
+<div class="panel">
+<h3>2026/11/09–2026/11/15 更新</h3>
+<p>中區兩支最高成效活動的出價策略現在是「盡量提高轉換價值」，本週轉換 17 與 3.16（前週 0），平均單次點擊 3.83 與 3.35 元（前週 16.74 與 25.05 元）。5 支搜尋活動本週 218 次點擊、費用 2,690.03 元，記到 1,123.62 次轉換、轉換價值 5,755,924.07 元；轉換價值的設定仍列在調整重點二。GA4 的 view_item 在 2026/11/16 已設預設重要事件價值 5 元；依 Google 說明，事件自己帶價值時不會套用預設值，所以還要處理事件帶的價值，或 Google 廣告端這個轉換動作的價值設定。以下各節的截圖與數字是 2026/10/03–2026/11/01 的後台檢視。</p>
+</div>
+</div>
+</section>
+
+<section class="slide t1" id="g-summary">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">Google 廣告 一頁看懂</p>
+<h2>三個轉換設定問題，讓廣告費追到的是逛網站的人</h2>
+</div>
+<div class="band"><p><b>本頁範圍：</b>只看 Google Ads 的兩個廣告帳號——中區帳號、北區帳號（北區帳號含南區門市的活動）。Meta（FB／IG）廣告是另一套帳號、另一套數據，現況在 <a href="#proposal">「廣告數據現況」分頁</a>，待解決問題在 <a href="#g-fb">本分頁第 01 頁</a>，本頁起只談 Google。</p></div>
+<ol class="facts probs">
+<li><b>問題一</b><div class="col">
+<p><b>主要花費的活動追「轉換價值／投資報酬率」，但轉換價值沒設好。</b>中區兩支最高成效活動占 30 天花費 59%，轉換 0、轉換價值 0；北區兩支投資報酬率活動每次轉換價值只有 1 元。系統追不到目標，只能用高出價搶曝光，廣告成本降不下來。調整細節見第 03 頁。</p>
+<div class="geo2">
+<figure><a href="c-campaigns.jpg" target="_blank" rel="noopener"><img src="c-campaigns.jpg" width="1993" height="1189" alt="中區帳號廣告活動列表截圖" loading="lazy"></a><figcaption>截圖・中區帳號 廣告活動列表：前兩列最高成效活動，出價策略「目標投資報酬率」，轉換次數 0.00、轉換價值 0.00，狀態「受到預算限制」；費用 7,845.18 與 6,413.25 元</figcaption></figure>
+<figure><a href="n-campaigns.jpg" target="_blank" rel="noopener"><img src="n-campaigns.jpg" width="2024" height="1250" alt="北區帳號廣告活動列表截圖" loading="lazy"></a><figcaption>截圖・北區帳號 廣告活動列表：前兩列「目標投資報酬率」活動，轉換次數 113.83 對轉換價值 111.75、60.83 對 60.83，每次 1 元；頂端 Google 提示「設定轉換價值報表」</figcaption></figure>
+</div>
+</div></li>
+<li><b>問題二</b><div class="col">
+<p><b>「瀏覽內容」的轉換價值設得太高。</b>中區 view_item 每次帶進約 2.7 萬元（等於商品標價），30 天 983 次、2,662 萬元，而且納入帳戶目標。逛一個商品頁被當成一張訂單，系統先追的是只逛不問不買的人。調整細節見第 04 頁。</p>
+<figure><a href="c-conversions.jpg" target="_blank" rel="noopener"><img src="c-conversions.jpg" width="1997" height="1241" alt="中區帳號所有轉換截圖" loading="lazy"></a><figcaption>截圖・中區帳號 所有轉換：「網頁瀏覽 (Google Analytics 事件 view_item)」一列，所有轉換 983.10、所有轉換價值 26,628,392.08，已納入帳戶層級目標「是」</figcaption></figure>
+</div></li>
+<li><b>問題三</b><div class="col">
+<p><b>來電、取得路線、商店造訪沒有納入目標。</b>北區 30 天取得路線 390、來電 115、商店造訪 322，合計 827 次，全部在帳戶目標之外。真正查地址、會聯繫的客人，反而不是系統在找的人。調整細節見第 05 頁。</p>
+<div class="geo2">
+<figure><a href="n-conversions-2.jpg" target="_blank" rel="noopener"><img src="n-conversions-2.jpg" width="2045" height="1136" alt="北區帳號所有轉換第 2 頁截圖" loading="lazy"></a><figcaption>截圖・北區帳號 所有轉換（第 2 頁）：Clicks to call 115.00、Local actions - Directions 390.00，「已納入帳戶層級目標」兩列都是「否」</figcaption></figure>
+<figure><a href="n-conversions-1.jpg" target="_blank" rel="noopener"><img src="n-conversions-1.jpg" width="2028" height="1182" alt="北區帳號所有轉換第 1 頁截圖" loading="lazy"></a><figcaption>截圖・北區帳號 所有轉換（第 1 頁）：Store visits 322.08，追蹤狀態「需要處理」，已納入帳戶層級目標「否」</figcaption></figure>
+</div>
+</div></li>
+</ol>
+<div class="panel">
+<h3>結果：關鍵字與最高成效的單次點擊成本高於平均</h3>
+<div class="chain">
+<div class="stop">轉換價值設錯</div><span class="ar" aria-hidden="true">→</span>
+<div class="stop">出價沒有方向</div><span class="ar" aria-hidden="true">→</span>
+<div class="stop">用高出價搶曝光</div><span class="ar" aria-hidden="true">→</span>
+<div class="stop">單次點擊成本高於平均</div><span class="ar" aria-hidden="true">→</span>
+<div class="stop end">預算流向曝光，轉換成本居高</div>
+</div>
+<p>中區帳號 30 天平均單次點擊 17.41 元，兩支最高成效活動 39.03 與 44.54 元；北區 7 支關鍵字活動 21.34 – 54.59 元。這個數字是上面三個問題的結果；設定改對，單次點擊成本會跟著降，列為結果指標每週看。</p>
+</div>
+<div class="note"><p><b>待確認：</b>兩個帳號把 24 個「各門市頁／介紹頁瀏覽」做成轉換動作，用途是什麼？是為了統計逛各店的需求嗎？見第 06 頁。交操作者的調整清單在第 07 頁。</p></div>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 Google 廣告檢視 ｜ 數據：Google Ads 後台截圖 2026-10-03 – 11-01</p><p>02</p></div>
+</div>
+</section>
+
+<section class="slide alt t2" id="g-issue1">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">調整重點一</p>
+<h2>先給系統可以追的價值，再用價值型出價</h2>
+</div>
+<table>
+<colgroup><col style="width:24%"><col style="width:12%"><col style="width:14%"><col style="width:12%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:8%"></colgroup>
+<thead><tr><th>Google 帳號</th><th>廣告活動</th><th>出價策略</th><th>30 天費用（元）</th><th>點擊</th><th>平均單次點擊（元）</th><th>轉換次數</th><th>轉換價值</th></tr></thead>
+<tbody>
+<tr><td data-label="Google 帳號">中區</td><td data-label="廣告活動">中區親臨門市(202607修改成只有中彰)-Performance Max-3-202604</td><td data-label="出價策略">目標投資報酬率</td><td data-label="30 天費用（元）">7,845.18</td><td data-label="點擊">201</td><td data-label="平均單次點擊（元）">39.03</td><td class="em" data-label="轉換次數">0.00</td><td class="em" data-label="轉換價值">0.00</td></tr>
+<tr><td data-label="Google 帳號">中區</td><td data-label="廣告活動">新竹親臨門市-Performance Max-3-202607</td><td data-label="出價策略">目標投資報酬率</td><td data-label="30 天費用（元）">6,413.25</td><td data-label="點擊">144</td><td data-label="平均單次點擊（元）">44.54</td><td class="em" data-label="轉換次數">0.00</td><td class="em" data-label="轉換價值">0.00</td></tr>
+<tr><td data-label="Google 帳號">北區</td><td data-label="廣告活動">最高成效_北區南區_202605</td><td data-label="出價策略">目標投資報酬率</td><td data-label="30 天費用（元）">7,381.07</td><td data-label="點擊">739</td><td data-label="平均單次點擊（元）">9.99</td><td data-label="轉換次數">113.83</td><td data-label="轉換價值">111.75</td></tr>
+<tr><td data-label="Google 帳號">北區</td><td data-label="廣告活動">台南-最佳成效-親臨門市</td><td data-label="出價策略">目標投資報酬率</td><td data-label="30 天費用（元）">6,940.09</td><td data-label="點擊">279</td><td data-label="平均單次點擊（元）">24.87</td><td data-label="轉換次數">60.83</td><td data-label="轉換價值">60.83</td></tr>
+<tr><td data-label="Google 帳號">北區</td><td data-label="廣告活動">高雄-最高成效-親臨門市</td><td data-label="出價策略">盡量爭取轉換</td><td data-label="30 天費用（元）">6,934.63</td><td data-label="點擊">887</td><td data-label="平均單次點擊（元）">7.82</td><td data-label="轉換次數">221.00</td><td data-label="轉換價值">221.00</td></tr>
+<tr><td data-label="Google 帳號">北區</td><td data-label="廣告活動">雲林嘉義-最佳成效-親臨門市</td><td data-label="出價策略">盡量提高轉換價值</td><td data-label="30 天費用（元）">6,829.55</td><td data-label="點擊">837</td><td data-label="平均單次點擊（元）">8.16</td><td data-label="轉換次數">155.79</td><td data-label="轉換價值">155.79</td></tr>
+</tbody>
+</table>
+<p class="sub">中區兩支最高成效活動合計 14,258.43 元，占中區 30 天總費用 24,061.18 元的 59%；兩支都顯示「受到預算限制」。北區四支最高成效活動合計 28,085.34 元。中區另有 5 支、北區另有 7 支搜尋活動，出價策略全部是「盡量提高轉換價值」。</p>
+<div class="geo2">
+<div class="panel">
+<h3>後台看到什麼</h3>
+<ul>
+<li>中區兩支「目標投資報酬率」活動 30 天 0 轉換、0 轉換價值，系統缺少可追的目標，於是用高出價搶曝光：單次點擊 39.03 與 44.54 元，同帳號搜尋活動只要 8.66 – 10.33 元。</li>
+<li>北區兩支「目標投資報酬率」活動的轉換價值幾乎等於轉換次數（113.83 次對 111.75 價值、60.83 對 60.83），每次轉換價值 1 元。投資報酬率目標要有真實價值，系統才算得出來。</li>
+<li>北區後台頂端顯示 Google 自己的提示「設定轉換價值報表」；Google 也在提醒把轉換價值設定完整。</li>
+<li>各轉換動作的「每次轉換價值」與活動層級的目標投資報酬率數值，截圖沒有顯示，列入待核對。</li>
+</ul>
+</div>
+<div class="panel">
+<h3>價值設對，成本才有下降的路徑</h3>
+<ol>
+<li>「目標投資報酬率」與「盡量提高轉換價值」都要靠每一次轉換帶進的價值去學。價值有高低，系統才有方向。</li>
+<li>有方向的活動會把預算花在會轉換的人身上；目前兩支中區活動標「受到預算限制」，是預算往曝光流的狀態。</li>
+<li>順序是：先設對轉換動作與價值，再選出價策略；這樣每一塊預算都在買會到店的人。</li>
+</ol>
+</div>
+</div>
+<div class="note"><p><b>Google 官方說明：</b>「採用『盡量提高轉換價值』出價之前，您必須先使用交易專屬價值來設定轉換追蹤。」（<a href="https://support.google.com/google-ads/answer/7684216?hl=zh-Hant" target="_blank" rel="noopener">關於盡量提高轉換價值出價</a>）；「您必須先針對正在追蹤的轉換設定價值，才能將目標廣告投資報酬率出價策略套用至廣告活動。」「Google Ads 會利用報表資料中的轉換價值（由您透過轉換追蹤回報），預測未來的轉換及相關聯的價值。」（<a href="https://support.google.com/google-ads/answer/6268637?hl=zh-Hant" target="_blank" rel="noopener">關於目標廣告投資報酬率出價</a>）</p></div>
+<div class="geo2">
+<figure><a href="c-campaigns.jpg" target="_blank" rel="noopener"><img src="c-campaigns.jpg" width="1993" height="1189" alt="中區帳號廣告活動列表截圖" loading="lazy"></a><figcaption>中區帳號 廣告活動列表（2026-10-03 – 11-01）</figcaption></figure>
+<figure><a href="n-campaigns.jpg" target="_blank" rel="noopener"><img src="n-campaigns.jpg" width="2024" height="1250" alt="北區帳號廣告活動列表截圖" loading="lazy"></a><figcaption>北區帳號 廣告活動列表（同期間；此帳號涵蓋北區與南區門市活動）</figcaption></figure>
+</div>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 Google 廣告檢視 ｜ 數據：Google Ads 後台截圖 2026-10-03 – 11-01</p><p>03</p></div>
+</div>
+</section>
+
+<section class="slide t1" id="g-issue2">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">調整重點二</p>
+<h2>商品頁瀏覽改成小額或觀察用，價值留給真正的動作</h2>
+</div>
+<dl class="stats s3">
+<div class="stat"><dt>983.10</dt><dd>中區 30 天「網頁瀏覽（GA4 事件 view_item）」轉換次數</dd></div>
+<div class="stat"><dt>26,628,392</dt><dd>同一動作帶進的轉換價值（元）；已納入帳戶層級目標</dd></div>
+<div class="stat"><dt>≈27,086</dt><dd>平均每次 view_item 的價值（元）＝26,628,392.08 ÷ 983.10</dd></div>
+</dl>
+<div class="two">
+<p>中區 5 支搜尋活動 30 天轉換價值各 428 萬到 594 萬元，加總 2,420 萬；這些價值幾乎全部來自 view_item。北區同一動作 30 天 1,236.15 次、價值 28,617,530.91 元（平均約 23,150 元），北區目前把它放在帳戶目標之外，這個做法是對的。</p>
+<p>瀏覽內容可以給一點價值；目前送進來的是商品標價，系統因此優先找「會點進高價商品頁」的人。把價值改成小額，系統就會轉向會打電話、會找路的人。</p>
+</div>
+<table>
+<colgroup><col style="width:36%"><col style="width:14%"><col style="width:16%"><col style="width:12%"><col style="width:22%"></colgroup>
+<thead><tr><th>轉換動作</th><th>Google 帳號</th><th>30 天次數</th><th>轉換價值（元）</th><th>已納入帳戶層級目標</th></tr></thead>
+<tbody>
+<tr><td data-label="轉換動作">網頁瀏覽 (Google Analytics 事件 view_item)</td><td data-label="Google 帳號">中區</td><td data-label="30 天次數">983.10</td><td class="em" data-label="轉換價值（元）">26,628,392.08</td><td class="em" data-label="已納入帳戶層級目標">是</td></tr>
+<tr><td data-label="轉換動作">PAGE_VIEW</td><td data-label="Google 帳號">中區</td><td data-label="30 天次數">0.00</td><td data-label="轉換價值（元）">0.00</td><td data-label="已納入帳戶層級目標">是</td></tr>
+<tr><td data-label="轉換動作">view_item</td><td data-label="Google 帳號">北區</td><td data-label="30 天次數">1,236.15</td><td data-label="轉換價值（元）">28,617,530.91</td><td data-label="已納入帳戶層級目標">否</td></tr>
+<tr><td data-label="轉換動作">conversion_event_page_view</td><td data-label="Google 帳號">北區</td><td data-label="30 天次數">0.00</td><td data-label="轉換價值（元）">0.00</td><td data-label="已納入帳戶層級目標">是</td></tr>
+</tbody>
+</table>
+<figure><a href="c-conversions.jpg" target="_blank" rel="noopener"><img src="c-conversions.jpg" width="1997" height="1241" alt="中區帳號所有轉換截圖" loading="lazy"></a><figcaption>中區帳號 所有轉換（2026-10-03 – 11-01）：view_item 一列 983.10 次、價值 26,628,392.08</figcaption></figure>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 Google 廣告檢視 ｜ 數據：Google Ads 後台截圖 2026-10-03 – 11-01</p><p>04</p></div>
+</div>
+</section>
+
+<section class="slide alt t2" id="g-issue3">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">調整重點三</p>
+<h2>來電、取得路線、商店造訪：納入目標，價值給最高</h2>
+</div>
+<table>
+<colgroup><col style="width:30%"><col style="width:12%"><col style="width:14%"><col style="width:14%"><col style="width:30%"></colgroup>
+<thead><tr><th>轉換動作</th><th>Google 帳號</th><th>30 天次數</th><th>已納入帳戶層級目標</th><th>追蹤狀態</th></tr></thead>
+<tbody>
+<tr><td data-label="轉換動作">Local actions - Directions（取得路線）</td><td data-label="Google 帳號">北區</td><td class="em" data-label="30 天次數">390.00</td><td class="em" data-label="已納入帳戶層級目標">否</td><td data-label="追蹤狀態">有效</td></tr>
+<tr><td data-label="轉換動作">Clicks to call（來電點擊）</td><td data-label="Google 帳號">北區</td><td class="em" data-label="30 天次數">115.00</td><td class="em" data-label="已納入帳戶層級目標">否</td><td data-label="追蹤狀態">有效</td></tr>
+<tr><td data-label="轉換動作">Store visits（商店造訪）</td><td data-label="Google 帳號">北區</td><td class="em" data-label="30 天次數">322.08</td><td class="em" data-label="已納入帳戶層級目標">否</td><td data-label="追蹤狀態">需要處理（橘色警示）</td></tr>
+<tr><td data-label="轉換動作">Local actions - Website visits</td><td data-label="Google 帳號">北區</td><td data-label="30 天次數">71.00</td><td data-label="已納入帳戶層級目標">否</td><td data-label="追蹤狀態">有效</td></tr>
+<tr><td data-label="轉換動作">Local actions - Other engagements</td><td data-label="Google 帳號">北區</td><td data-label="30 天次數">3,273.00</td><td data-label="已納入帳戶層級目標">否</td><td data-label="追蹤狀態">有效</td></tr>
+<tr><td data-label="轉換動作">Conversation started（訊息）</td><td data-label="Google 帳號">北區</td><td data-label="30 天次數">2.00</td><td data-label="已納入帳戶層級目標">是</td><td data-label="追蹤狀態">正在等待轉換</td></tr>
+<tr><td data-label="轉換動作">Local actions - Website visits</td><td data-label="Google 帳號">中區</td><td data-label="30 天次數">13.00</td><td data-label="已納入帳戶層級目標">否</td><td data-label="追蹤狀態">有效</td></tr>
+<tr><td data-label="轉換動作">Local actions - Menu views</td><td data-label="Google 帳號">中區</td><td data-label="30 天次數">0.00</td><td data-label="已納入帳戶層級目標">否</td><td data-label="追蹤狀態">沒有新的轉換</td></tr>
+</tbody>
+</table>
+<p class="sub">中區截圖第一列被切掉，取得路線與來電兩列沒有拍到，列入待核對。</p>
+<div class="geo2">
+<div class="panel">
+<h3>對照：目前納入帳戶目標的是什麼</h3>
+<ul>
+<li>北區納入的是 9 個「各門市頁瀏覽」（30 天合計 398.15 次，每次 1 元或 0 元）、購買（0 次）、btn_car（0 次）、conversation started（2 次）。</li>
+<li>中區納入的是 view_item（26,628,392 元）、PAGE_VIEW、2 個門市頁、5 個介紹頁、全國門市頁面。</li>
+<li>也就是：出價目前在學「看頁面」；改完後學「聯絡與找路」。</li>
+</ul>
+</div>
+<div class="panel">
+<h3>該怎麼排價值</h3>
+<ol>
+<li>來電點擊、取得路線、商店造訪設為主要動作、納入帳戶層級目標，價值給最高一階。這三個動作代表客人已經查地址或聯繫，價值遠高於單純瀏覽。</li>
+<li>商店造訪目前「需要處理」，先把警示處理掉，數據才會穩。</li>
+<li>門市頁瀏覽放中間一階、商品頁瀏覽放最低一階或觀察用；價值階梯由高到低＝聯繫與找路 ＞ 門市頁 ＞ 商品頁。實際數字與操作者一起定。</li>
+</ol>
+</div>
+</div>
+<div class="note"><p><b>Google 官方說明：</b>「針對有設定本地動作的廣告主，建議在最高成效廣告活動中採用『目標廣告投資報酬率』或『盡量提高轉換價值』出價策略。」「使用『盡量提高轉換價值』策略時，務必為本地動作指定適當的轉換價值。」（<a href="https://support.google.com/google-ads/answer/9013908?hl=zh-Hant" target="_blank" rel="noopener">關於本地動作轉換</a>）。兩個帳號用的正是這兩種出價策略；把本地動作納入目標、給上價值，就是官方建議的用法。</p></div>
+<div class="geo2">
+<figure><a href="n-conversions-2.jpg" target="_blank" rel="noopener"><img src="n-conversions-2.jpg" width="2045" height="1136" alt="北區帳號所有轉換第 2 頁截圖" loading="lazy"></a><figcaption>北區帳號 所有轉換（第 2 頁）：取得路線 390、來電 115、Other engagements 3,273，納入帳戶目標皆為「否」</figcaption></figure>
+<figure><a href="n-conversions-1.jpg" target="_blank" rel="noopener"><img src="n-conversions-1.jpg" width="2028" height="1182" alt="北區帳號所有轉換第 1 頁截圖" loading="lazy"></a><figcaption>北區帳號 所有轉換（第 1 頁）：Store visits 322.08「需要處理」、7 個介紹頁 30 天合計 1 次</figcaption></figure>
+</div>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 Google 廣告檢視 ｜ 數據：Google Ads 後台截圖 2026-10-03 – 11-01</p><p>05</p></div>
+</div>
+</section>
+
+<section class="slide t1" id="g-question">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">待確認</p>
+<h2>把「瀏覽各門市頁」做成轉換，是為了統計逛各店的需求嗎？</h2>
+</div>
+<div class="band"><p><b>請操作者回答：</b>兩個帳號合計 24 個「各門市頁／介紹頁瀏覽」轉換動作，用途是什麼？若是要知道各店頁面被看幾次，GA4 報表可以直接看；改成次要動作留著統計，帳戶目標就能集中在聯絡與到店。</p></div>
+<p class="sub">動作全名為「我們是幸福床店_TW - GA4 (web) ○○門市／○○介紹」，表內省略前綴。</p>
+<div class="geo2">
+<div class="col">
+<h3>中區（8 個）</h3>
+<table>
+<colgroup><col style="width:60%"><col style="width:20%"><col style="width:20%"></colgroup>
+<thead><tr><th>轉換動作</th><th>30 天次數</th><th>轉換價值</th></tr></thead>
+<tbody>
+<tr><td data-label="轉換動作">新竹門市</td><td data-label="30 天次數">56.75</td><td data-label="轉換價值">56.75</td></tr>
+<tr><td data-label="轉換動作">彰化門市</td><td data-label="30 天次數">17.12</td><td data-label="轉換價值">17.12</td></tr>
+<tr><td data-label="轉換動作">新竹竹北介紹</td><td data-label="30 天次數">1.00</td><td data-label="轉換價值">1.00</td></tr>
+<tr><td data-label="轉換動作">新竹光復介紹</td><td data-label="30 天次數">1.00</td><td data-label="轉換價值">1.00</td></tr>
+<tr><td data-label="轉換動作">彰化鹿港介紹</td><td data-label="30 天次數">1.00</td><td data-label="轉換價值">1.00</td></tr>
+<tr><td data-label="轉換動作">台中大里介紹</td><td data-label="30 天次數">0.00</td><td data-label="轉換價值">0.00</td></tr>
+<tr><td data-label="轉換動作">台中北屯介紹</td><td data-label="30 天次數">4.00</td><td data-label="轉換價值">4.00</td></tr>
+<tr><td data-label="轉換動作">全國門市頁面</td><td data-label="30 天次數">24.22</td><td data-label="轉換價值">24.22</td></tr>
+</tbody>
+</table>
+</div>
+<div class="col">
+<h3>北區（16 個）</h3>
+<table>
+<colgroup><col style="width:60%"><col style="width:20%"><col style="width:20%"></colgroup>
+<thead><tr><th>轉換動作</th><th>30 天次數</th><th>轉換價值</th></tr></thead>
+<tbody>
+<tr><td data-label="轉換動作">台中門市</td><td data-label="30 天次數">9.12</td><td data-label="轉換價值">9.12</td></tr>
+<tr><td data-label="轉換動作">台北門市</td><td data-label="30 天次數">59.90</td><td data-label="轉換價值">59.90</td></tr>
+<tr><td data-label="轉換動作">桃園門市</td><td data-label="30 天次數">70.29</td><td class="em" data-label="轉換價值">0.00</td></tr>
+<tr><td data-label="轉換動作">高雄門市</td><td data-label="30 天次數">113.14</td><td data-label="轉換價值">113.14</td></tr>
+<tr><td data-label="轉換動作">雲林門市</td><td data-label="30 天次數">8.00</td><td class="em" data-label="轉換價值">0.00</td></tr>
+<tr><td data-label="轉換動作">新竹門市</td><td data-label="30 天次數">14.21</td><td data-label="轉換價值">14.21</td></tr>
+<tr><td data-label="轉換動作">嘉義門市</td><td data-label="30 天次數">19.00</td><td class="em" data-label="轉換價值">0.00</td></tr>
+<tr><td data-label="轉換動作">彰化門市</td><td data-label="30 天次數">5.10</td><td data-label="轉換價值">5.10</td></tr>
+<tr><td data-label="轉換動作">台南門市</td><td data-label="30 天次數">99.39</td><td data-label="轉換價值">99.39</td></tr>
+<tr><td data-label="轉換動作">桃園介紹</td><td data-label="30 天次數">0.00</td><td data-label="轉換價值">0.00</td></tr>
+<tr><td data-label="轉換動作">台南健康介紹</td><td data-label="30 天次數">0.00</td><td data-label="轉換價值">0.00</td></tr>
+<tr><td data-label="轉換動作">高雄博愛介紹</td><td data-label="30 天次數">0.00</td><td data-label="轉換價值">0.00</td></tr>
+<tr><td data-label="轉換動作">台北蘆洲介紹</td><td data-label="30 天次數">0.00</td><td data-label="轉換價值">0.00</td></tr>
+<tr><td data-label="轉換動作">台南海佃介紹</td><td data-label="30 天次數">0.00</td><td data-label="轉換價值">0.00</td></tr>
+<tr><td data-label="轉換動作">台南永康介紹</td><td data-label="30 天次數">1.00</td><td data-label="轉換價值">1.00</td></tr>
+<tr><td data-label="轉換動作">嘉義南京介紹</td><td data-label="30 天次數">0.00</td><td data-label="轉換價值">0.00</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="panel">
+<h3>三個觀察</h3>
+<ol>
+<li>同一類動作價值不一致：北區桃園門市 70.29 次價值 0、雲林門市 8 次價值 0、嘉義門市 19 次價值 0，其餘每次 1 元。</li>
+<li>北區 7 個「介紹」動作 30 天合計 1 次、中區 5 個介紹動作合計 7 次；把這些動作移到觀察用，帳戶目標的訊號會更集中。</li>
+<li>有統計需求可以留著當「次要動作」：只記錄、觀察用，報表照樣看得到各店次數。Google 官方說明：主要動作「會列在報表的『轉換』欄並用於出價」，次要動作「僅供觀察」（<a href="https://support.google.com/google-ads/answer/11461796?hl=zh-Hant" target="_blank" rel="noopener">關於主要和次要轉換動作</a>）。</li>
+</ol>
+</div>
+<figure><a href="n-conversions-stores.jpg" target="_blank" rel="noopener"><img src="n-conversions-stores.jpg" width="1977" height="1241" alt="北區帳號購買分組下門市頁瀏覽動作截圖" loading="lazy"></a><figcaption>北區帳號 所有轉換：「購買（帳戶預設目標）」分組下 9 個門市頁瀏覽動作，桃園／雲林／嘉義價值為 0</figcaption></figure>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 Google 廣告檢視 ｜ 數據：Google Ads 後台截圖 2026-10-03 – 11-01</p><p>06</p></div>
+</div>
+</section>
+
+<section class="slide t1" id="g-actions">
+<div class="in">
+<div class="hd">
+<p class="eyebrow">調整清單</p>
+<h2>交操作者在後台改：要改什麼、改成什麼</h2>
+</div>
+<table>
+<colgroup><col style="width:6%"><col style="width:30%"><col style="width:30%"><col style="width:34%"></colgroup>
+<thead><tr><th>#</th><th>項目（現況）</th><th>改成</th><th>說明</th></tr></thead>
+<tbody>
+<tr><td class="k" data-label="#">1</td><td data-label="項目（現況）">中區「中區親臨門市」「新竹親臨門市」兩支最高成效：目標投資報酬率、30 天 0 轉換（2026/11/09–2026/11/15 兩支的出價策略已是「盡量提高轉換價值」）</td><td data-label="改成">出價策略改「盡量爭取轉換」；活動層級轉換目標改為本地動作（來電、取得路線、商店造訪）</td><td data-label="說明">先累積轉換訊號；30 天有穩定轉換後再評估回價值型出價</td></tr>
+<tr><td class="k" data-label="#">2</td><td data-label="項目（現況）">北區「最高成效_北區南區」「台南-最佳成效-親臨門市」兩支：目標投資報酬率、每次轉換價值 1 元</td><td data-label="改成">同上改「盡量爭取轉換」，轉換目標改本地動作</td><td data-label="說明">投資報酬率目標要有真實價值才算得出來</td></tr>
+<tr><td class="k" data-label="#">3</td><td data-label="項目（現況）">中區 5 支、北區 7 支搜尋活動：盡量提高轉換價值</td><td data-label="改成">價值重設完成前改「盡量爭取轉換」</td><td data-label="說明">讓系統在價值重設前先追轉換次數</td></tr>
+<tr><td class="k" data-label="#">4</td><td data-label="項目（現況）">來電點擊、取得路線、商店造訪：未納入帳戶層級目標</td><td data-label="改成">設為主要動作、納入帳戶層級目標，價值給最高一階；先處理 Store visits「需要處理」警示</td><td data-label="說明">這三個動作是客人已查地址或聯繫</td></tr>
+<tr><td class="k" data-label="#">5</td><td data-label="項目（現況）">view_item／網頁瀏覽（中區已納入目標，每次約 2.7 萬元）、PAGE_VIEW、conversion_event_page_view</td><td data-label="改成">改次要動作或價值改固定小額；留在帳戶目標之外</td><td data-label="說明">瀏覽是觀察指標，訂單與到店才是出價目標</td></tr>
+<tr><td class="k" data-label="#">6</td><td data-label="項目（現況）">24 個各門市頁／介紹頁瀏覽轉換動作（部分價值 0、部分 1）</td><td data-label="改成">操作者先答用途；預設全部改次要動作、移出帳戶目標</td><td data-label="說明">要統計各店頁面次數，GA4 報表就有</td></tr>
+<tr><td class="k" data-label="#">7</td><td data-label="項目（現況）">門市頁動作價值不一致（桃園、雲林、嘉義為 0）</td><td data-label="改成">統一同一階價值</td><td data-label="說明">同類動作同一價值，系統判斷才一致</td></tr>
+</tbody>
+</table>
+<div class="note"><p><b>執行方式：</b>帳號由貴司操作者執行。本清單經李柏儀轉達；每一項改完記一行日期，並回報給我方。</p></div>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 Google 廣告檢視 ｜ 數據：Google Ads 後台截圖 2026-10-03 – 11-01</p><p>07</p></div>
+</div>
+</section>
+
+<section class="slide alt t2" id="g-verify">
+<div class="in sb">
+<div class="hd">
+<p class="eyebrow">待核對</p>
+<h2>請操作者在後台逐一確認這幾項</h2>
+</div>
+<ol class="steps">
+<li><b>01</b><span>每個轉換動作的「每次轉換價值」設定值（固定值或使用不同價值），特別是 view_item 與各門市頁。</span></li>
+<li><b>02</b><span>6 支最高成效活動各自的活動層級轉換目標與「目標投資報酬率」數值。</span></li>
+<li><b>03</b><span>中區「所有轉換」第一列被切掉的動作，以及是否有取得路線、來電點擊兩個動作。</span></li>
+<li><b>04</b><span>北區廣告活動列表裕農以下是否還有活動與 Total 列。</span></li>
+<li><b>05</b><span>Store visits「需要處理」警示的內容。</span></li>
+</ol>
+<div class="endrow">
+<div><p class="big">Orderdan 簡單營銷</p><p class="small">orderdan-ai-marketing.com</p></div>
+<p class="small">後台檢視日期 2026-11-02・數據期間 2026-10-03 – 11-01</p>
+</div>
+<div class="ft"><p>Orderdan 簡單營銷 ｜ 我們是幸福床店 Google 廣告檢視 ｜ 數據：Google Ads 後台截圖 2026-10-03 – 11-01</p><p>08</p></div>
+</div>
+</section>
+
+</main>
+<footer class="pfoot">
+<p>本頁僅供我們是幸福床店與 Orderdan 簡單營銷雙方參考，已設定 noindex。</p>
+<p>更新日期 2026-11-16</p>
+<p>待解決問題分頁：Google 部分的截圖是 Google Ads 後台截圖六張（中區、北區帳號，2026-10-03 – 11-01）。</p>
+</footer>
+<script>
+(function(){
+var tabs=[].slice.call(document.querySelectorAll('.tabs .tab'));
+var panes={proposal:document.getElementById('tab-proposal'),google:document.getElementById('tab-google')};
+function show(k){Object.keys(panes).forEach(function(p){panes[p].hidden=(p!==k);});tabs.forEach(function(b){var on=b.getAttribute('data-tab')===k;b.classList.toggle('on',on);b.setAttribute('aria-selected',on?'true':'false');});}
+function route(){var h=(location.hash||'').replace('#','');var k=(h==='google'||h.indexOf('g-')===0)?'google':'proposal';show(k);var el=(h&&h!=='google'&&h!=='proposal')?document.getElementById(h):null;if(el){el.scrollIntoView();}else{window.scrollTo(0,0);requestAnimationFrame(function(){window.scrollTo(0,0);});}}
+tabs.forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-tab');if(history.replaceState){history.replaceState(null,'','#'+k);}show(k);window.scrollTo(0,0);requestAnimationFrame(function(){window.scrollTo(0,0);});});});
+window.addEventListener('hashchange',route);
+route();
+})();
+</script>
+</body>
+</html>
